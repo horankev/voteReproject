@@ -3,13 +3,6 @@
 
 # voteReproject
 
-``` r
-library(voteReproject)
-library(tidyverse)
-library(sf)
-library(ggpubr)
-```
-
 <!-- badges: start -->
 <!-- badges: end -->
 
@@ -24,8 +17,6 @@ The goal of `voteReproject` is, by reprojecting voting data from the
 earlier elections to the 2024 boundaries, to provide datasets which are
 suitable for comparative analysis.
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
-
 ## Installation
 
 You can install the development version of voteReproject from
@@ -35,6 +26,8 @@ You can install the development version of voteReproject from
 # install.packages("devtools")
 devtools::install_github("horankev/voteReproject")
 ```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ## Example
 

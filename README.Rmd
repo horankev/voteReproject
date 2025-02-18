@@ -15,15 +15,6 @@ knitr::opts_chunk$set(
 
 # voteReproject
 
-```{r, warning=FALSE, message=FALSE}
-library(voteReproject)
-library(tidyverse)
-library(sf)
-library(ggpubr)
-
-```
-
-
 <!-- badges: start -->
 <!-- badges: end -->
 
@@ -32,6 +23,23 @@ The 2017, 2019 and 2024 UK General Elections produced highly contrasting results
 It is, however, difficult to compare certain aspects of them because of boundary changes to constituencies which took effect for the 2024 election. 
 
 The goal of `voteReproject` is, by reprojecting voting data from the earlier elections to the 2024 boundaries, to provide datasets which are suitable for comparative analysis.
+
+## Installation
+
+You can install the development version of voteReproject from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("horankev/voteReproject")
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+library(voteReproject)
+library(tidyverse)
+library(sf)
+library(ggpubr)
+
+```
 
 ```{r, fig.width=10, fig.height=10, echo=FALSE}
 
@@ -47,15 +55,6 @@ ggplot(temp) +
   scale_linewidth_manual(values = c(0.2,0.5)) +
   theme_void()
 
-```
-
-## Installation
-
-You can install the development version of voteReproject from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("horankev/voteReproject")
 ```
 
 ## Example
