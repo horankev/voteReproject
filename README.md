@@ -20,8 +20,9 @@ It is, however, difficult to compare certain aspects of them because of
 boundary changes to constituencies which took effect for the 2024
 election.
 
-The goal of `voteReproject` is to reproject voting data from the earlier
-elections to the 2024 boundaries.
+The goal of `voteReproject` is, by reprojecting voting data from the
+earlier elections to the 2024 boundaries, to provide datasets which are
+suitable for comparitive analysis.
 
 ## Installation
 
@@ -34,6 +35,10 @@ devtools::install_github("horankev/voteReproject")
 ```
 
 ## Example
+
+Below are shown the winning party in each constituency from the 2024
+election and the first-placed party from the two previous elections
+subject to reprojection.
 
 ``` r
 
