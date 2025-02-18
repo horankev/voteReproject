@@ -14,6 +14,7 @@ library(spdep, quietly = TRUE)
 
 ### Voting data 2017-2024
 
+# SOURCE: https://ckan.publishing.service.gov.uk/dataset/westminster-parliamentary-constituencies-december-2019-boundaries-uk-bfe1/resource/a13d5188-2a5d-4867-a93d-509ea4235299
 
 # constituencies in 2017 and 2019
 # this file too large to upload to github
@@ -28,7 +29,11 @@ library(spdep, quietly = TRUE)
 
 constituencies19 <- readRDS(here("data-raw","boundaries","constituencies19"))
 
+
 # projection data to 2024
+
+# SOURCE: https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/
+
 all_changes <- readxl::read_xlsx(here("data-raw","boundaries","Boundary_changes_data_file.xlsx"), 
                                  sheet = 3, skip = 1)
 
@@ -54,6 +59,9 @@ projection_df <- all_changes |>
 
 
 # 2017 votes
+
+# SOURCE: https://researchbriefings.files.parliament.uk/documents/CBP-7979/HoC-GE2017-results-by-constituency.csv
+
 votes17 <- read.csv(here("data-raw","election_results","HoC-GE2017-results-by-constituency.csv")) |> 
   clean_names() |> 
   left_join(constituencies19 |> select(con_code,geometry),
@@ -106,6 +114,9 @@ votes17proj <- votes17 |>
 
 
 # 2019 votes
+
+# SOURCE: https://researchbriefings.files.parliament.uk/documents/CBP-8749/HoC-GE2019-results-by-constituency.csv
+
 votes19 <- read.csv(here("data-raw","election_results","HoC-GE2019-results-by-constituency.csv")) |> 
   clean_names() |> 
   left_join(constituencies19 |> select(con_code,geometry),
@@ -159,6 +170,9 @@ votes19proj <- votes19 |>
 
 
 ## Boundaries for constituencies and regions 2024
+
+# SOURCE: https://observablehq.com/@jwolondon/uk-election-2024-boundary-data
+
 constituencies24 <- st_read(here("data-raw","boundaries","geoConstituencies.json"), quiet = TRUE) |> 
   st_make_valid() |> 
   select(PCON24CD,PCON24NM,name3,regionNM,geometry) |> 
@@ -196,6 +210,9 @@ hexoutline24 <- hex24 |>
   ms_dissolve()
 
 # 2024 votes
+
+# SOURCE: https://researchbriefings.files.parliament.uk/documents/CBP-10009/HoC-GE2024-results-by-constituency.csv
+
 votes24 <- read.csv(here("data-raw","election_results","HoC-GE2024-results-by-constituency.csv")) |> 
   clean_names() |> 
   left_join(constituencies24 |> select(con_code,con_abb,geometry),
@@ -234,6 +251,7 @@ votes24 <- read.csv(here("data-raw","election_results","HoC-GE2024-results-by-co
 
 ### Census data
 
+# SOURCE: https://statistics.ukdataservice.ac.uk/dataset/?q=census+2021&sort=score+desc%2C+metadata_modified+desc&vocab_Area_type=Westminster+Parliamentary+Constituencies
 
 sex_age <- readxl::read_xlsx(here("data-raw","census21","RM121-Sex-By-Age-2021-p19wpc-ONS.xlsx")) |> 
   clean_names() |> 
