@@ -24,6 +24,6 @@
 #'   \item{other}{int Number of votes for others}
 #'   \item{geometry}{sfc_GEOMETRY Constituency boundaries 2017/2019}
 #' }
-#' @source \urlhttps://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes}
+#' @source \url{https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes}
 "party_palette"
 
