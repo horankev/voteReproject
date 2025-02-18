@@ -69,9 +69,10 @@ ggarrange(
 <img src="man/figures/README-example1-1.png" width="100%" />
 
 The problem of invisibility of constituencies which are small by area,
-usually dense urban settings, can be overcoome by using hexagonal
+usually dense urban settings, can be overcome by using hexagonal
 representations of the constituencies. Their positioning aims to closely
-resemble their actual relative position.
+resemble their actual relative position. Here, we use hexagons created
+by Philip Brown and Alasdair Rae from Automatic Knowledge Ltd.
 
 ``` r
 
