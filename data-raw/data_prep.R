@@ -391,7 +391,7 @@ party_palette <- c(
 #   geom_sf(data=hexregions24, fill=NA, colour="black", linewidth=0.5) +
 #   geom_sf(data=hexoutline24, fill=NA, colour="black", linewidth=0.5) +
 #   scale_fill_manual(values = party_palette)
-
+#
 
 usethis::use_data(votes17, votes17proj, votes19, votes19proj, votes24, votestogether, 
                   votestogether_hex, census, constituencies19, constituencies24, 
