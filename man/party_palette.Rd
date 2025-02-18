@@ -29,7 +29,7 @@ A named vector of length 14:
 }
 }
 \source{
-\urlhttps://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes}
+\url{https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes}
 }
 \usage{
 party_palette
