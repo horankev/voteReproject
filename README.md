@@ -36,6 +36,8 @@ devtools::install_github("horankev/voteReproject")
 
 ## Example
 
+**MORE DETAILS TO FOLLOW…**
+
 Below are shown the winning party in each constituency from the 2024
 election and the first-placed party from the two previous elections
 subject to reprojection.
