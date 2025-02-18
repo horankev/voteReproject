@@ -11,4 +11,5 @@
 #'   \item{geometry}{sfc_GEOMETRY Hexagonal constituencies 2024}
 #' }
 #' @source \url{https://observablehq.com/@jwolondon/uk-election-2024-boundary-data}
+#' Philip Brown and Alasdair Rae, Automatic Knowledge
 "hex24"

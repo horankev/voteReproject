@@ -112,6 +112,7 @@ An \code{sf} dataframe with 650 rows and 99 variables:
 }
 \source{
 \url{https://researchbriefings.files.parliament.uk/documents/CBP-7979/HoC-GE2017-results-by-constituency.csv} \url{https://researchbriefings.files.parliament.uk/documents/CBP-8749/HoC-GE2019-results-by-constituency.csv} \url{https://researchbriefings.files.parliament.uk/documents/CBP-10009/HoC-GE2024-results-by-constituency.csv} \url{https://statistics.ukdataservice.ac.uk/dataset/?q=census+2021&sort=score+desc\%2C+metadata_modified+desc&vocab_Area_type=Westminster+Parliamentary+Constituencies} \url{https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/}
+Philip Brown and Alasdair Rae, Automatic Knowledge
 }
 \usage{
 votestogether_hex

@@ -16,6 +16,7 @@ An \code{sf} dataframe with 650 rows and 5 variables:
 }
 \source{
 \url{https://observablehq.com/@jwolondon/uk-election-2024-boundary-data}
+Philip Brown and Alasdair Rae, Automatic Knowledge
 }
 \usage{
 hex24
