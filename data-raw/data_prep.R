@@ -71,6 +71,7 @@ votes17 <- read.csv(here("data-raw","election_results","HoC-GE2017-results-by-co
   rename(ruk = ukip) |> 
   select(con_code,constituency_name,region_name,majority,valid_votes,con:other,geometry) |> 
   rename(valid_votes17 = valid_votes) |> 
+  # changes were made to 5 Scottish constituency area codes so these are updated here
   mutate(con_code = case_when(con_code == "S14000006" ~ "S14000107",
                               con_code == "S14000008" ~ "S14000108",
                               con_code == "S14000010" ~ "S14000109",
@@ -129,6 +130,7 @@ votes19 <- read.csv(here("data-raw","election_results","HoC-GE2019-results-by-co
   rename(ruk = brx) |> 
   select(con_code,constituency_name,region_name,majority,valid_votes,con:other,geometry) |>  
   rename(valid_votes19 = valid_votes) |> 
+  # changes were made to 5 Scottish constituency area codes so these are updated here
   mutate(con_code = case_when(con_code == "S14000006" ~ "S14000107",
                               con_code == "S14000008" ~ "S14000108",
                               con_code == "S14000010" ~ "S14000109",
