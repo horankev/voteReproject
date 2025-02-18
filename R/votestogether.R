@@ -103,5 +103,5 @@
 #'   \item{white}{num Proportion of population in constituency of white ethnicity}
 #'   \item{geometry}{sfc_GEOMETRY Constituency boundaries 2024}
 #' }
-#' @source \url{https://researchbriefings.files.parliament.uk/documents/CBP-7979/HoC-GE2017-results-by-constituency.csv} \url{https://researchbriefings.files.parliament.uk/documents/CBP-8749/HoC-GE2019-results-by-constituency.csv} \url{https://researchbriefings.files.parliament.uk/documents/CBP-10009/HoC-GE2024-results-by-constituency.csv} \url{https://statistics.ukdataservice.ac.uk/dataset/?q=census+2021&sort=score+desc%2C+metadata_modified+desc&vocab_Area_type=Westminster+Parliamentary+Constituencies} \url{https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/}
+#' @source \url{https://researchbriefings.files.parliament.uk/documents/CBP-7979/HoC-GE2017-results-by-constituency.csv} \url{https://researchbriefings.files.parliament.uk/documents/CBP-8749/HoC-GE2019-results-by-constituency.csv} \url{https://researchbriefings.files.parliament.uk/documents/CBP-10009/HoC-GE2024-results-by-constituency.csv} \url{https://geoportal.statistics.gov.uk/maps/ons::westminster-parliamentary-constituencies-july-2024-boundaries-uk-buc-2} \url{https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/}
 "votestogether"

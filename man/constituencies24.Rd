@@ -15,7 +15,7 @@ An \code{sf} dataframe with 650 rows and 5 variables:
 }
 }
 \source{
-\url{https://observablehq.com/@jwolondon/uk-election-2024-boundary-data}
+\url{https://geoportal.statistics.gov.uk/maps/ons::westminster-parliamentary-constituencies-july-2024-boundaries-uk-buc-2}
 }
 \usage{
 constituencies24

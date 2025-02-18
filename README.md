@@ -22,7 +22,9 @@ election.
 
 The goal of `voteReproject` is, by reprojecting voting data from the
 earlier elections to the 2024 boundaries, to provide datasets which are
-suitable for comparitive analysis.
+suitable for comparative analysis.
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ## Installation
 

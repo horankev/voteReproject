@@ -110,8 +110,11 @@ votes17proj <- votes17 |>
   rename(con_code = newcon_code) |> 
   mutate(con_code = factor(con_code),
          across(apni17:uup17, as.integer),
-         valid_votes17 = as.integer(valid_votes17))
-
+         valid_votes17 = as.integer(valid_votes17)) |> 
+  # for speaker seat, Chorley (E14001170), make all positions stay as speaker
+  mutate(first_party17 = if_else(con_code == "E14001170", "spk", first_party17),
+         second_party17 = if_else(con_code == "E14001170", "spk", second_party17),
+         third_party17 = if_else(con_code == "E14001170", "spk", third_party17))
 
 # 2019 votes
 
@@ -165,16 +168,29 @@ votes19proj <- votes19 |>
   rename(con_code = newcon_code) |> 
   mutate(con_code = factor(con_code),
          across(apni19:uup19, as.integer),
-         valid_votes19 = as.integer(valid_votes19))
+         valid_votes19 = as.integer(valid_votes19)) |> 
+  # for speaker seat, Chorley (E14001170), make all positions stay as speaker
+  mutate(first_party19 = if_else(con_code == "E14001170", "spk", first_party19),
+         second_party19 = if_else(con_code == "E14001170", "spk", second_party19),
+         third_party19 = if_else(con_code == "E14001170", "spk", third_party19))
 
 
 
 ## Boundaries for constituencies and regions 2024
 
-# SOURCE: https://observablehq.com/@jwolondon/uk-election-2024-boundary-data
+# SOURCE hex: https://observablehq.com/@jwolondon/uk-election-2024-boundary-data
+# SOURCE regular: https://geoportal.statistics.gov.uk/maps/ons::westminster-parliamentary-constituencies-july-2024-boundaries-uk-buc-2
 
-constituencies24 <- st_read(here("data-raw","boundaries","geoConstituencies.json"), quiet = TRUE) |> 
-  st_make_valid() |> 
+constituencies24 <- 
+  st_read(here("data-raw","boundaries","Westminster_Parliamentary_Constituencies_July_2024_Boundaries_UK_BUC_4872633423108313063.geojson"), quiet = TRUE) |> 
+  select(PCON24CD,PCON24NM,geometry) |> 
+  rename(con_name = PCON24NM,
+         con_code = PCON24CD) |> 
+  mutate(con_name = factor(con_name),
+         con_code = factor(con_code)) |> 
+  left_join(hex24 |> st_drop_geometry())
+
+hex24 <- st_read(here("data-raw","boundaries","hexConstituencies.json"), quiet = TRUE) |> 
   select(PCON24CD,PCON24NM,name3,regionNM,geometry) |> 
   rename(con_name = PCON24NM,
          con_code = PCON24CD,
@@ -192,16 +208,6 @@ regions24 <- constituencies24 |>
                               reg_name == "Yorkshire and the Humber" ~ "Yorkshire and The Humber",
                               TRUE ~ reg_name)))
 
-hex24 <- st_read(here("data-raw","boundaries","hexConstituencies.json"), quiet = TRUE) |> 
-  select(PCON24CD,PCON24NM,name3,regionNM,geometry) |> 
-  rename(con_name = PCON24NM,
-         con_code = PCON24CD,
-         reg_name = regionNM,
-         con_abb = name3) |> 
-  mutate(con_name = factor(con_name),
-         con_code = factor(con_code),
-         reg_name = factor(reg_name),
-         con_abb = factor(con_abb))
 
 hexregions24 <- hex24 |> 
   ms_dissolve("reg_name")
@@ -377,7 +383,9 @@ party_palette <- c(
   "uup"="#48A5EE",
   "apni"="#F6CB2F",
   "other"="gray",
-  "ind"="pink"
+  "ind"="pink",
+  "tuv"="#0C3A6A",
+  "spk"="black"
 )
 
 # demonstration plots
@@ -411,7 +419,7 @@ party_palette <- c(
 #   scale_fill_manual(values = party_palette)
 #
 
-usethis::use_data(votes17, votes17proj, votes19, votes19proj, votes24, votestogether, 
-                  votestogether_hex, census, constituencies19, constituencies24, 
-                  hex24, hexoutline24, hexregions24, party_palette, 
+usethis::use_data(votes17, votes17proj, votes19, votes19proj, votes24, votestogether,
+                  votestogether_hex, census, constituencies19, constituencies24,
+                  hex24, hexoutline24, hexregions24, party_palette,
                   overwrite = TRUE)

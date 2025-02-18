@@ -31,8 +31,23 @@ The 2017, 2019 and 2024 UK General Elections produced highly contrasting results
 
 It is, however, difficult to compare certain aspects of them because of boundary changes to constituencies which took effect for the 2024 election. 
 
-The goal of `voteReproject` is, by reprojecting voting data from the earlier elections to the 2024 boundaries, to provide datasets which are suitable for comparitive analysis.
+The goal of `voteReproject` is, by reprojecting voting data from the earlier elections to the 2024 boundaries, to provide datasets which are suitable for comparative analysis.
 
+```{r, fig.width=10, fig.height=10, echo=FALSE}
+
+temp <- data.frame(
+  geometry = c(votes19$geometry, votes24$geometry),
+  year = c(rep("2019",650),rep("2024",650))
+) |> 
+  st_as_sf()
+
+ggplot(temp) +
+  geom_sf(aes(colour=year, linewidth=year), fill=NA) +
+  scale_colour_manual(values = c("#ED1941","gray50")) +
+  scale_linewidth_manual(values = c(0.2,0.5)) +
+  theme_void()
+
+```
 
 ## Installation
 
@@ -98,3 +113,7 @@ ggarrange(
 
 
 ```
+
+
+
+

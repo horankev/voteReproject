@@ -10,5 +10,5 @@
 #'   \item{reg_name}{Factor Region name}
 #'   \item{geometry}{sfc_GEOMETRY Constituency boundaries 2024}
 #' }
-#' @source \url{https://observablehq.com/@jwolondon/uk-election-2024-boundary-data}
+#' @source \url{https://geoportal.statistics.gov.uk/maps/ons::westminster-parliamentary-constituencies-july-2024-boundaries-uk-buc-2}
 "constituencies24"
