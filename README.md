@@ -52,7 +52,9 @@ this projection are shown below.
 source:
 <https://commonslibrary.parliament.uk/boundary-review-2023-which-seats-will-change/>
 
-## Example
+## Examples
+
+### Party position
 
 Below are shown the winning party in each constituency from the 2024
 election and the first-placed party from the two previous elections
@@ -115,136 +117,24 @@ ggarrange(
 
 <img src="man/figures/README-example2-1.png" width="100%" />
 
+### Scotland
+
 Looking at changes in votes in Scotland for the Scottish National Party
-and Labour:
-
-``` r
-
-ggarrange(
-  ggplot(votestogether |> filter(region_name == "Scotland")) +
-    geom_sf(aes(fill=snp24_pct)) +
-    scale_fill_distiller(palette = "Oranges", direction = 1, limits = c(0,55)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Scotland")) +
-    geom_sf(aes(fill=snp19_pct)) +
-    scale_fill_distiller(palette = "Oranges", direction = 1, limits = c(0,55)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Scotland")) +
-    geom_sf(aes(fill=snp17_pct)) +
-    scale_fill_distiller(palette = "Oranges", direction = 1, limits = c(0,55)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Scotland")) +
-    geom_sf(aes(fill=lab24_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,60)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Scotland")) +
-    geom_sf(aes(fill=lab19_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,60)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Scotland")) +
-    geom_sf(aes(fill=lab17_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,60)) + 
-    theme_void(),
-  
-  ncol = 3,
-  nrow = 2
-)
-```
+and Labour, in standard geographical form and as hexagons:
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
-Looking at changes in votes in England for the Conservatives and Labour:
+### England
 
-``` r
-
-ggarrange(
-  ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
-    geom_sf(aes(fill=con24_pct, colour=con24_pct)) +
-    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Blues", direction = 1, limits = c(0,80)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
-    geom_sf(aes(fill=con19_pct, colour=con19_pct)) +
-    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Blues", direction = 1, limits = c(0,80)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
-    geom_sf(aes(fill=con17_pct, colour=con17_pct)) +
-    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Blues", direction = 1, limits = c(0,80)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
-    geom_sf(aes(fill=lab24_pct, colour=lab24_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
-    geom_sf(aes(fill=lab19_pct, colour=lab19_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
-    geom_sf(aes(fill=lab17_pct, colour=lab17_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    theme_void(),
-  
-  ncol = 3,
-  nrow = 2
-)
-```
+Looking at changes in votes in England for the Conservatives and Labour,
+in standard geographical form and as hexagons:
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
+### Northern Ireland
+
 Looking at changes in votes in Northern Ireland for Sinn Fein and the
-Democratic Unionist Party:
-
-``` r
-
-ggarrange(
-  ggplot(votestogether |> filter(region_name == "Northern Ireland")) +
-    geom_sf(aes(fill=sf24_pct)) +
-    scale_fill_distiller(palette = "Greens", direction = 1, limits = c(0,70)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Northern Ireland")) +
-    geom_sf(aes(fill=sf19_pct)) +
-    scale_fill_distiller(palette = "Greens", direction = 1, limits = c(0,70)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Northern Ireland")) +
-    geom_sf(aes(fill=sf17_pct)) +
-    scale_fill_distiller(palette = "Greens", direction = 1, limits = c(0,70)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Northern Ireland")) +
-    geom_sf(aes(fill=dup24_pct)) +
-    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0,70)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Northern Ireland")) +
-    geom_sf(aes(fill=dup19_pct)) +
-    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0,70)) + 
-    theme_void(),
-  
-  ggplot(votestogether |> filter(region_name == "Northern Ireland")) +
-    geom_sf(aes(fill=dup17_pct)) +
-    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0,70)) + 
-    theme_void(),
-  
-  ncol = 3,
-  nrow = 2
-)
-```
+Democratic Unionist Party, in standard geographical form and as
+hexagons:
 
 <img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
