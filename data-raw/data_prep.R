@@ -371,6 +371,9 @@ votestogether_hex <- votestogether |>
   st_as_sf()
 
 
+### Party colours
+
+# SOURCE: https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes
 party_palette <- c(
   "con"="#0087DC",
   "lab"="#E4003B",
