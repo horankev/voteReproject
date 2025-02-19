@@ -65,7 +65,7 @@ The problem of invisibility of constituencies which are small by area,
 usually dense urban settings, can be overcome by using hexagonal
 representations of the constituencies. Their positioning aims to closely
 resemble their actual relative position. Here, we use hexagons created
-by Philip Brown and Alasdair Rae from Automatic Knowledge Ltd.
+by Philip Brown and Alasdair Rae from Automatic Knowledge.
 
 ``` r
 
