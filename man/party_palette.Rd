@@ -12,7 +12,7 @@ A named character vector of length 16:
 }
 }
 \source{
-Custom-defined party colours
+\url{https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes}
 }
 \usage{
 party_palette
