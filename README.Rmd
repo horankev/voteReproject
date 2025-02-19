@@ -98,7 +98,7 @@ kable(head(projection_df, 5), booktabs = TRUE, caption = "source: <https://commo
 
 Below are shown the winning party in each constituency from the 2024 election and the first-placed party from the two previous elections subject to reprojection. The boundaries are sourced from <https://geoportal.statistics.gov.uk> and the voting data from <https://commonslibrary.parliament.uk/tag/elections-data/>.
 
-```{r example1, fig.width=12, fig.height=4}
+```{r example1, fig.width=10, fig.height=5}
 
 ggarrange(
   ggplot(votestogether) +
@@ -118,13 +118,12 @@ ggarrange(
   
   ncol = 3
 )
-
 
 ```
 
 The problem of invisibility of constituencies which are small by area, usually dense urban settings, can be overcome by using hexagonal representations of the constituencies. Their positioning aims to closely resemble their actual relative position. Here, we use hexagons created by Philip Brown and Alasdair Rae from Automatic Knowledge (<https://observablehq.com/@jwolondon/uk-election-2024-boundary-data>).
 
-```{r example2, fig.width=12, fig.height=4}
+```{r example2, fig.width=10, fig.height=5}
 
 ggarrange(
   ggplot(votestogether_hex) +
@@ -144,7 +143,6 @@ ggarrange(
   
   ncol = 3
 )
-
 
 ```
 
