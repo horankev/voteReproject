@@ -150,7 +150,7 @@ ggarrange(
 
 ### Scotland
 
-Looking at changes in votes in Scotland for the Scottish National Party and Labour, in standard geographical form and as hexagons: 
+Looking at changes in votes in Scotland for the Scottish National Party (SNP) and Labour, in standard geographical form and as hexagons: 
 
 ```{r, fig.width=8, fig.height=10, echo=FALSE}
 
@@ -308,7 +308,7 @@ ggarrange(
 
 ### Northern Ireland
 
-Looking at changes in votes in Northern Ireland for Sinn Fein and the Democratic Unionist Party, in standard geographical form and as hexagons: 
+Looking at changes in votes in Northern Ireland for Sinn Fein and the Democratic Unionist Party (DUP), in standard geographical form and as hexagons: 
 
 ```{r, fig.width=12, fig.height=10, echo=FALSE}
 
