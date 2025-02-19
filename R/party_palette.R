@@ -12,6 +12,6 @@
 #' party_palette["con"]  # Get the Conservative Party colour
 #' party_palette["lab"]  # Get the Labour Party colour
 #'
-#' @source Custom-defined party colours
+#' @source \url{https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Politics_of_the_United_Kingdom/Index_of_United_Kingdom_political_parties_meta_attributes}
 "party_palette"
 
