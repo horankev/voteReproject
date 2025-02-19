@@ -266,20 +266,20 @@ ggarrange(
   
   ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
     geom_sf(aes(fill=lab24_pct, colour=lab24_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
+    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,90)) + 
+    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,90)) + 
     theme_void(),
   
   ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
     geom_sf(aes(fill=lab19_pct, colour=lab19_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
+    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,90)) + 
+    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,90)) + 
     theme_void(),
   
   ggplot(votestogether |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
     geom_sf(aes(fill=lab17_pct, colour=lab17_pct)) +
-    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
-    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,80)) + 
+    scale_fill_distiller(palette = "Reds", direction = 1, limits = c(0,90)) + 
+    scale_colour_distiller(palette = "Reds", direction = 1, limits = c(0,90)) + 
     theme_void(),
   
   ggplot(votestogether_hex |> filter(!region_name %in% c("Wales","Scotland","Northern Ireland"))) +
@@ -378,6 +378,7 @@ ggarrange(
 )
 
 ```
+
 
 
 
