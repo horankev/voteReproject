@@ -183,15 +183,6 @@ votes19proj <- votes19 |>
 # SOURCE hex: https://observablehq.com/@jwolondon/uk-election-2024-boundary-data
 # SOURCE regular: https://geoportal.statistics.gov.uk/maps/ons::westminster-parliamentary-constituencies-july-2024-boundaries-uk-buc-2
 
-constituencies24 <- 
-  st_read(here("data-raw","boundaries","Westminster_Parliamentary_Constituencies_July_2024_Boundaries_UK_BUC_4872633423108313063.geojson"), quiet = TRUE) |> 
-  select(PCON24CD,PCON24NM,geometry) |> 
-  rename(con_name = PCON24NM,
-         con_code = PCON24CD) |> 
-  mutate(con_name = factor(con_name),
-         con_code = factor(con_code)) |> 
-  left_join(hex24 |> st_drop_geometry())
-
 hex24 <- st_read(here("data-raw","boundaries","hexConstituencies.json"), quiet = TRUE) |> 
   select(PCON24CD,PCON24NM,name3,regionNM,geometry) |> 
   rename(con_name = PCON24NM,
@@ -202,6 +193,15 @@ hex24 <- st_read(here("data-raw","boundaries","hexConstituencies.json"), quiet =
          con_code = factor(con_code),
          reg_name = factor(reg_name),
          con_abb = factor(con_abb))
+
+constituencies24 <- 
+  st_read(here("data-raw","boundaries","Westminster_Parliamentary_Constituencies_July_2024_Boundaries_UK_BUC_4872633423108313063.geojson"), quiet = TRUE) |> 
+  select(PCON24CD,PCON24NM,geometry) |> 
+  rename(con_name = PCON24NM,
+         con_code = PCON24CD) |> 
+  mutate(con_name = factor(con_name),
+         con_code = factor(con_code)) |> 
+  left_join(hex24 |> st_drop_geometry())
 
 regions24 <- constituencies24 |> 
   ms_dissolve("reg_name") |> 
