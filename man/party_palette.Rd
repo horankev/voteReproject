@@ -18,7 +18,7 @@ A named character vector of length 16:
 party_palette
 }
 \description{
-A named character vector providing hex colour codes for different political parties.
+A named character vector providing hex colour codes for different UK political parties.
 }
 \examples{
 party_palette["con"]  # Get the Conservative Party colour

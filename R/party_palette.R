@@ -1,6 +1,6 @@
 #' Party Colour Palette
 #'
-#' A named character vector providing hex colour codes for different political parties.
+#' A named character vector providing hex colour codes for different UK political parties.
 #'
 #' @format A named character vector of length 16:
 #' \describe{
